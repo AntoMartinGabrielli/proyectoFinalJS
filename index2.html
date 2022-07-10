@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./flechas.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5bf0ae1d86.js" crossorigin="anonymous"></script>
+    <title>Conversor de Unidades</title>
+</head>
+<body class="body">
+<header class="header">
+    <nav>
+      <ul class="listaHeader">
+        <li>
+          <a class="flechas" href="./index.html">
+            <i class="fa-solid fa-arrows-rotate"></i> 
+          </a>
+        </li>
+        <li>
+          <div class="titulo">CONVERSOR DE UNIDADES</div>
+        </li>
+        <li>
+          <a class="flechas" href="./index.html">
+            <i class="fa-solid fa-arrows-rotate"></i> 
+          </a>
+        </li>
+      </ul>
+      </nav>
+</header>
+<main class="main">
+    <div class="medida">
+        <h2>CONVERSOR DE LONGITUD</h2>
+        <form>
+            <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
+            <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO">
+            <select class="deLong">
+                <option value="mm">MILIMETRO</option>
+                <option value="cm">CENTIMETRO</option>
+                <option value="m">METRO</option>
+                <option value="km">KILOMETRO</option>
+                <option value="in">PULGADA</option>
+                <option value="ft">PIE</option>
+                <option value="mi">MILLA</option>
+            </select>
+            <label class="unidadDeseada" for="unidadDeseada">A</label>
+            <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
+            <select class="aLong">
+                <option value="mm">MILIMETRO</option>
+                <option value="cm">CENTIMETRO</option>
+                <option value="m">METRO</option>
+                <option value="km">KILOMETRO</option>
+                <option value="in">PULGADA</option>
+                <option value="ft">PIE</option>
+                <option value="mi">MILLA</option>
+            </select>
+        </form>
+    </div>
+    <div class="medida">
+        <h2>CONVERSOR DE TEMPERATURA</h2>
+        <form>
+            <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
+            <input type="search" name="unidadAConvertir" class="uAConvertir"placeholder="NUMERO">
+            <select class="deLong">
+                <option value="mm">CELCIUS</option>
+                <option value="cm">FAHRENHEIT</option>
+                <option value="m">KELVIN</option>
+            </select>
+            <label class="unidadDeseada" for="unidadDeseada">A</label>
+            <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
+            <select class="aLong">
+                <option value="C">CELCIUS</option>
+                <option value="F">FAHRENHEIT</option>
+                <option value="K">KELVIN</option>
+            </select>
+        </form>
+    </div>
+    <div class="medida">
+        <h2>CONVERSOR DE MASA</h2>
+        <form>
+            <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
+            <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO">
+            <select class="deLong">
+                <option value="kg">KILOGRAMO</option>
+                <option value="g">GRAMO</option>
+                <option value="oz">ONZA</option>
+                <option value="lb">LIBRA</option>
+                <option value="t">TONELADA</option>
+            </select>
+            <label class="unidadDeseada" for="unidadDeseada">A</label>
+            <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
+            <select class="aLong">
+                <option value="kg">KILOGRAMO</option>
+                <option value="g">GRAMO</option>
+                <option value="oz">ONZA</option>
+                <option value="lb">LIBRA</option>
+                <option value="t">TONELADA</option>
+            </select>
+        </form>
+    </div>
+    <div class="medida">
+        <h2>CONVERSOR DE VOLUMEN</h2>
+        <form>
+            <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
+            <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO">
+            <select class="deLong">
+                <option value="kg">LITRO</option>
+                <option value="g">MILILITRO</option>
+                <option value="oz">CENTIMETRO CUBICO</option>
+                <option value="lb">METRO CUBICO</option>
+            </select>
+            <label class="unidadDeseada" for="unidadDeseada">A</label>
+            <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
+            <select class="aLong">
+                <option value="kg">LITRO</option>
+                <option value="g">MILILITRO</option>
+                <option value="oz">CENTIMETRO CUBICO</option>
+                <option value="lb">METRO CUBICO</option>
+            </select>
+        </form>
+    </div>
+
+</main>
+<footer>
+   
+</footer>
+    <script src="./main.js"></script>
+</body>
+</html>
