@@ -36,4 +36,5 @@ function convertirTemp(){
         outputTemp = inputTemp;
     }
 }
+console.log(outputTemp);
 
