@@ -7,7 +7,7 @@ class conversor{
 let listaMedidas = [{medida:"temperatura", unidades:"C, K y F"}, {medida:"volumen", unidades:"L, ML, CC y MC"}, {medida:"longitud", unidades:"MM, CM, M, KM, IN, FT y MI"}, {medida:"masa", unidades:"KG, G, OZ, LB y T"}]
 
 
-let busquedaMedidaUsuario = prompt("¿Qué medida desea convertir?").toLowerCase();
+/* let busquedaMedidaUsuario = prompt("¿Qué medida desea convertir?").toLowerCase();
 let buscarMedida = listaMedidas.find(med => med.medida == busquedaMedidaUsuario);
 
 if (listaMedidas.some(med => med.medida == busquedaMedidaUsuario)){
@@ -23,34 +23,10 @@ if (listaMedidas.some(med => med.medida == busquedaMedidaUsuario)){
         alert(`Usted agrego ${medidaNueva.medida} a la lista de conversores de la pagina. Muchas gracias.`)
     }
     agregarMedida()
-}
+} */
 
 
 /* TEMPERATURA */
-
-
-/* let inputTemp = parseFloat(prompt("TEMPERATURA: Numero a convertir")); */
-
-/* ACA INTENTE CON LA FORMA QUE ME DIJISTE Y DE OTRA FORMA QUE MOSTRO LA PROFE EN UNA DE LASC CLASES Y NO ME FUNCIONA */
-/* if(inputTemp.toString() == "NaN"){
-    alert("Numero invalido.");
-    parseFloat(prompt("Por favor ingresar numero valido a convertir"));
-} */
-
-/* let deTemp = prompt("Temperatura a convertir. Elegir entre C (celcius), F (Fahrenheit) y K (Kelvin).").toUpperCase();
-
-if ((deTemp != "C") && (deTemp !=  "F") && (deTemp != "K")){
-    alert("No es una medida existente. Por favor ingresar medida valida.");
-    deTemp = prompt(" Ingresar temperatura a convertir valida. Elegir entre C (celcius), F (Fahrenheit) y K (Kelvin).").toUpperCase();
-}
-
-let aTemp = prompt("Temperatura deseada. Elegir entre C (celcius), F (Fahrenheit) y K (Kelvin).").toUpperCase();
-
-if ((aTemp != "C") && (aTemp !=  "F") && (aTemp != "K")){
-    alert("No es una medida existente. Por favor ingresar medida valida.");
-    aTemp = prompt(" Ingresar temperatura deseada valida. Elegir entre C (celcius), F (Fahrenheit) y K (Kelvin).").toUpperCase();
-} */
-
 
 const inputTemp = document.getElementById('inputTemp');
 const outputTemp = document.getElementById('outputTemp');
@@ -62,20 +38,17 @@ inputTemp.addEventListener("keyup", convertirTemp);
 deTemp.addEventListener("change", convertirTemp);
 aTemp.addEventListener("change", convertirTemp);
 
-deTempValue = deTemp.value;
-aTempValue = aTemp.value;
-
 
 function convertirTemp(){
     deTempValue = deTemp.value;
     aTempValue = aTemp.value;
 
-    /* celcius a kelvin */
-    if (deTempValue == "C" && aTempValue == "K"){
-        outputTemp.value = Math.round(inputTemp.value+273.15);
-    }/* celcius a fahrenheit */
-    else if (deTempValue == "C" && aTempValue == "F"){
-        outputTemp.value = Math.round((inputTemp.value*1.8)+32);
+    /* celcius a fahrenheit */
+    if (deTempValue == "C" && aTempValue == "F"){
+       outputTemp.value = Math.round((inputTemp.value*1.8)+32);
+    }/* celcius a kelvin */
+    else if (deTempValue == "C" && aTempValue == "K"){
+        outputTemp.value = Math.round(Number(inputTemp.value)+273.15);
     } /* fahrenheit a celcius */
     else if (deTempValue == "F" && aTempValue == "C"){
         outputTemp.value = Math.round((inputTemp.value-32)/1.8);
@@ -96,13 +69,8 @@ function convertirTemp(){
 }
 convertirTemp();
 
+
 /* VOLUMEN */
-
-/* let inputVol = parseFloat(prompt("VOLUMEN: Numero a convertir"));
-
-let deVol = prompt("Volumen a convertir. Elegir entre L (Litro), ML (Mililitro), CC (Centimetro Cubico) y MC (Metro Cubico).").toUpperCase();
-
-let aVol = prompt("Volumen deseado. Elegir entre L (Litro), ML (Mililitro), CC (Centimetro Cubico) y MC (Metro Cubico).").toUpperCase(); */
 
 const inputVol = document.getElementById('inputVol');
 const outputVol = document.getElementById('outputVol');
@@ -114,10 +82,10 @@ inputVol.addEventListener("keyup", convertirVol);
 deVol.addEventListener("change", convertirVol);
 aVol.addEventListener("change", convertirVol);
 
-deVolValue = deVol.value;
-aVolValue = aVol.value;
-
 function convertirVol (){
+    deVolValue = deVol.value;
+    aVolValue = aVol.value;
+
     /* litro a mililitro */
     if (deVolValue == "L" && aVolValue == "ML"){
         outputVol.value = inputVol.value*1000;
@@ -162,5 +130,141 @@ function convertirVol (){
 }
 convertirVol();
 
+let tiposConversiones = [
+    {
+        tipo: "TEMPERATURA",
+        opciones: [
+            {
+                id: 'C',
+                nombre: 'CELCIUS',
+            },
+            {
+                id: 'F',
+                nombre: 'FAHRENHEIT',
+            },
+            {
+                id: 'K',
+                nombre: 'KELVIN',
+            },
+        ]
+    }, 
+    {
+        tipo: "VOLUMEN",
+        opciones: [
+            {
+                id: 'L',
+                nombre: 'LITRO',
+            },
+            {
+                id: 'ML',
+                nombre: 'MILILITRO',
+            },
+            {
+               id: 'CC',
+               nombre: 'CENTIMETRO CUBICO',
+            },
+            {
+               id: 'MC',
+               nombre: 'METRO CUBICO',
+           },
+        ]
+    },
+    {
+       tipo: "MASA",
+       opciones: [
+           {
+               id: 'KG',
+               nombre: 'KILOGRAMO',
+           },
+           {
+               id: 'G',
+               nombre: 'GRAMO',
+           },
+           {
+               id: 'OZ',
+               nombre: 'ONZA',
+           },
+           {
+               id: 'LB',
+               nombre: 'LIBRA',
+           },
+           {
+               id: 'T',
+               nombre: 'TONELADA',
+           },
+       ]
+   },
+   {
+       tipo: "LONGITUD",
+       opciones: [
+           {
+               id: 'MM',
+               nombre: 'MILIMETRO',
+           },
+           {
+               id: 'CM',
+               nombre: 'CENTIMETRO',
+           },
+           {
+               id: 'M',
+               nombre: 'METRO',
+           },
+           {
+               id: 'KM',
+               nombre: 'KILOMETRO',
+           },
+           {
+               id: 'IN',
+               nombre: 'PULGADA',
+           },
+           {
+               id: 'FT',
+               nombre: 'PIE',
+           },
+           {
+               id: 'MI',
+               nombre: 'MILLA',
+           },
+       ]
+   },
+] 
 
+tiposConversiones.forEach(obj => {
+    if(obj.tipo === "TEMPERATURA"){
+        let deTemp = document.getElementById('deTemp')
 
+        obj.opciones.forEach(elemento => {
+        let optionTemp = document.createElement('option')
+        optionTemp.value = elemento.id
+        optionTemp.innerText = elemento.nombre
+        deTemp.append(optionTemp)
+        });
+   } else if(obj.tipo === 'VOLUMEN'){
+        let deVol = document.getElementById('deVol')
+
+        obj.opciones.forEach(elemento => {
+        let optionVol = document.createElement('option')
+        optionVol.value = elemento.id
+        optionVol.innerText = elemento.nombre
+        deVol.append(optionVol)
+       });
+   } else if(obj.tipo === 'MASA'){
+       let deMasa = document.getElementById('deMasa')
+
+       obj.opciones.forEach(elemento => {
+       let optionMasa = document.createElement('option')
+       optionMasa.value = elemento.id
+       optionMasa.innerText = elemento.nombre
+       deMasa.append(optionMasa)
+      });
+   } else if(obj.tipo === 'LONGITUD'){
+       let deLong = document.getElementById('deLong')
+
+       obj.opciones.forEach(elemento => {
+       let optionLong = document.createElement('option')
+       optionLong.value = elemento.id
+       optionLong.innerText = elemento.nombre
+       deLong.append(optionLong)
+      });
+   }
+});

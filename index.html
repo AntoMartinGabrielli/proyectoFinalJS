@@ -41,18 +41,18 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO">
-            <select class="deLong">
-                <option value="MM">MILIMETRO</option>
+            <select class="de" id="deLong">
+                <!-- <option value="MM">MILIMETRO</option>
                 <option value="CM">CENTIMETRO</option>
                 <option value="M">METRO</option>
                 <option value="KM">KILOMETRO</option>
                 <option value="IN">PULGADA</option>
                 <option value="FT">PIE</option>
-                <option value="MI">MILLA</option>
+                <option value="MI">MILLA</option> -->
             </select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
-            <select class="aLong">
+            <select class="a" id="aLong">
                 <option value="MM">MILIMETRO</option>
                 <option value="CM">CENTIMETRO</option>
                 <option value="M">METRO</option>
@@ -67,15 +67,15 @@
         <h2>CONVERSOR DE TEMPERATURA</h2>
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
-            <input type="text" name="unidadAConvertir" class="uAConvertir"placeholder="NUMERO" id="inputTemp">
-            <select class="deLong" id="deTemp">
-                <option value="C">CELCIUS</option>
+            <input type="number" name="unidadAConvertir" class="uAConvertir"placeholder="NUMERO" id="inputTemp">
+            <select class="de" id="deTemp">
+              <!--   <option value="C">CELCIUS</option>
                 <option value="F">FAHRENHEIT</option>
-                <option value="K">KELVIN</option>
+                <option value="K">KELVIN</option> -->
             </select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
-            <input type="text" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputTemp">
-            <select class="aLong" id="aTemp">
+            <input type="number" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputTemp">
+            <select class="a" id="aTemp">
                 <option value="C">CELCIUS</option>
                 <option value="F">FAHRENHEIT</option>
                 <option value="K">KELVIN</option>
@@ -87,16 +87,16 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO">
-            <select class="deLong">
-                <option value="KG">KILOGRAMO</option>
+            <select class="de" id="deMasa">
+                <!-- <option value="KG">KILOGRAMO</option>
                 <option value="G">GRAMO</option>
                 <option value="OZ">ONZA</option>
                 <option value="LB">LIBRA</option>
-                <option value="T">TONELADA</option>
+                <option value="T">TONELADA</option> -->
             </select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO">
-            <select class="aLong">
+            <select class="a" id="aMasa">
                 <option value="KG">KILOGRAMO</option>
                 <option value="G">GRAMO</option>
                 <option value="OZ">ONZA</option>
@@ -110,15 +110,15 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO" id="inputVol">
-            <select class="deLong" id="deVol">
-                <option value="L">LITRO</option>
+            <select class="de" id="deVol">
+                <!-- <option value="L">LITRO</option>
                 <option value="ML">MILILITRO</option>
                 <option value="CC">CENTIMETRO CUBICO</option>
-                <option value="MC">METRO CUBICO</option>
+                <option value="MC">METRO CUBICO</option> -->
             </select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputVol">
-            <select class="aLong" id="aVol">
+            <select class="a" id="aVol">
                 <option value="L">LITRO</option>
                 <option value="ML">MILILITRO</option>
                 <option value="CC">CENTIMETRO CUBICO</option>
