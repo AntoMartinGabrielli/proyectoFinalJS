@@ -44,30 +44,15 @@ padding:0;}
     font-weight: bold;
 }
 
-/* .form{
-    color: rgba(16, 58, 51, 0.986);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: large;
-} */
-
-/* .medidaAConvertir{
-    padding-right: 8%;
-}
-.mAConvertir{
-    width: 200px;
-    height: 40px;
-    border-color:rgba(11, 145, 122, 0.986);
-} */
-
-/* .unidades{
-    padding-top: 10px;
-} */
-
 .unidadAConvertir{
     font-weight: bold;
     padding-right: 10px;
+}
+
+.unidadDeseada{
+    padding-left: 5%;
+    padding-right: 10px;
+    font-weight: bold;
 }
 
 .uAConvertir{
@@ -79,12 +64,6 @@ padding:0;}
     border-style: solid;
 }
 
-.unidadDeseada{
-    padding-left: 5%;
-    padding-right: 10px;
-    font-weight: bold;
-}
-
 .uDeseada{
     font-family: 'Mukta', sans-serif;
     width: 200px;
@@ -93,6 +72,7 @@ padding:0;}
     border-width: 3px;
     border-style: solid;
 }
+
 .de{
     font-family: 'Mukta', sans-serif ;
     width: 200px;
@@ -108,4 +88,92 @@ padding:0;}
     border-width: 3px;
 }
 
+.formUsuario{
+    margin:30px;
+    padding:20px;
+    border: 2px solid;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 90px;
+    background-color: rgba(11, 145, 122, 0.986);
+    text-align: center;
+    border-color: rgb(44, 43, 43);
+    border-width: 3px;
+    border-radius: 5px;
+}
 
+#irAConversor{
+    opacity: 0;
+}
+
+.formBody{
+    font-family: 'Mukta', sans-serif;
+    background-color: rgb(200, 211, 207);
+    height: 100vh;
+}
+
+.login{
+    font-family: 'Mukta', sans-serif ;
+    width: 80px;
+    height: 40px;
+    border: 2px solid;
+    border-color:rgb(200, 211, 207);
+    color:rgb(107, 201, 166);
+    background-color:black ;
+    margin-top: 10%;
+    margin-bottom: 0%;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.irAConversor{
+    font-family: 'Mukta', sans-serif ;
+    width: 200px;
+    height: 40px;
+    border: 2px solid;
+    border-color:rgb(200, 211, 207);
+    color:rgb(107, 201, 166);
+    background-color:black ;
+    margin-top: 10%;
+    font-size: 120%;
+    font-weight: bold; 
+    margin-bottom: 5%;
+}
+
+#respuesta{
+    font-family: 'Mukta', sans-serif ;
+    font-size: 130%;   
+}
+
+
+.username{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.user{
+    font-family: 'Mukta', sans-serif ;
+    width: 200px;
+    height: 40px;
+    border-color:rgb(44, 43, 43);
+    border-width: 2px; 
+    margin-bottom: 10% ; 
+    font-size: 100%;
+}
+
+.password{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.pass{
+    font-family: 'Mukta', sans-serif ;
+    width: 200px;
+    height: 40px;
+    border-color:rgb(44, 43, 43);
+    border-width: 2px;  
+    margin-bottom: 10%;
+    font-size: 100%;
+}

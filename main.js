@@ -131,7 +131,7 @@ function convertirVol (){
 convertirVol();
 
 let tiposConversiones = [
-    {
+    {   
         tipo: "TEMPERATURA",
         opciones: [
             {
@@ -268,3 +268,5 @@ tiposConversiones.forEach(obj => {
       });
    }
 });
+
+
