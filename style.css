@@ -129,7 +129,7 @@ padding:0;}
 }
 
 .irAConversor{
-    font-family: 'Mukta', sans-serif ;
+   /*  font-family: 'Mukta', sans-serif ;
     width: 200px;
     height: 40px;
     border: 2px solid;
@@ -139,14 +139,16 @@ padding:0;}
     margin-top: 10%;
     font-size: 120%;
     font-weight: bold; 
-    margin-bottom: 5%;
+    margin-bottom: 5%; */
+    color:rgba(11, 145, 122, 0.986);
+    text-decoration: none;
+    font-weight: bold; 
 }
 
 #respuesta{
     font-family: 'Mukta', sans-serif ;
     font-size: 130%;   
 }
-
 
 .username{
     font-weight: bold;

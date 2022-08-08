@@ -1,8 +1,8 @@
 const formUser = document.querySelector("#formUser");
 const usernameForm = document.querySelector("#username");
 const passwordForm = document.querySelector("#password");
-const respuestaForm = document.querySelector("#respuesta");
-const irAConversor = document.querySelector("#irAConversor");
+/* const respuestaForm = document.querySelector("#respuesta");
+const irAConversor = document.querySelector("#irAConversor"); */
 
 
 let username;
@@ -14,12 +14,19 @@ let passwordStorage = localStorage.getItem('password');
 
 
 const ejecutarRespuesta = () => {
-    respuestaForm.innerHTML = `BIENVENIDO ${username}`;
+    Swal.fire({
+        title: `BIENVENIDO ${username}`,
+        confirmButtonText:`<a href="./index.html" class="irAConversor" >IR A CONVERSOR</a>`,
+        confirmButtonColor: `black`,
+        color:`black`,
+        background:`rgba(107, 201, 166)`,  
+    })
+    /* respuestaForm.innerHTML = `BIENVENIDO ${username}`;
     formUser.style.display = 'none';
     irAConversor.style.opacity = 100;
     irAConversor.addEventListener('click', () => {
         window.location.href = ('./index.html');
-    });
+    }); */
 }
 
 const ejecutarForm = () => {
@@ -60,4 +67,3 @@ const verificarStorage = () => {
 
 
 verificarStorage();
-
