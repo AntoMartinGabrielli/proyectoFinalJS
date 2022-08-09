@@ -230,37 +230,39 @@ let tiposConversiones = [
 ] 
 
 tiposConversiones.forEach(obj => {
-    if(obj.tipo === "TEMPERATURA"){
+    let {tipo, opciones} = obj;
+
+    if(tipo === "TEMPERATURA"){
         let deTemp = document.getElementById('deTemp')
 
-        obj.opciones.forEach(elemento => {
+        opciones.forEach(elemento => {
         let optionTemp = document.createElement('option')
         optionTemp.value = elemento.id
         optionTemp.innerText = elemento.nombre
         deTemp.append(optionTemp)
         });
-   } else if(obj.tipo === 'VOLUMEN'){
+   } else if(tipo === 'VOLUMEN'){
         let deVol = document.getElementById('deVol')
 
-        obj.opciones.forEach(elemento => {
+        opciones.forEach(elemento => {
         let optionVol = document.createElement('option')
         optionVol.value = elemento.id
         optionVol.innerText = elemento.nombre
         deVol.append(optionVol)
        });
-   } else if(obj.tipo === 'MASA'){
+   } else if(tipo === 'MASA'){
        let deMasa = document.getElementById('deMasa')
 
-       obj.opciones.forEach(elemento => {
+       opciones.forEach(elemento => {
        let optionMasa = document.createElement('option')
        optionMasa.value = elemento.id
        optionMasa.innerText = elemento.nombre
        deMasa.append(optionMasa)
       });
-   } else if(obj.tipo === 'LONGITUD'){
+   } else if(tipo === 'LONGITUD'){
        let deLong = document.getElementById('deLong')
 
-       obj.opciones.forEach(elemento => {
+       opciones.forEach(elemento => {
        let optionLong = document.createElement('option')
        optionLong.value = elemento.id
        optionLong.innerText = elemento.nombre
