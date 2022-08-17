@@ -271,4 +271,29 @@ tiposConversiones.forEach(obj => {
    }
 });
 
+/* fetch */
+const boton = document.querySelector("#btn");
+const contenedor = document.querySelector("#fetch");
 
+const obtenerComentarios = async ()=>{
+    try {
+        let response = await fetch("./data.json");
+        let result = await response.json();
+        result.forEach(coment => {
+            contenedor.innerHTML +=`
+                <div class="coments">
+                    <h3 class="tituloComent">COMENTARIO ${coment.id}</h3>
+                    <p class="usuarioComent">${coment.usuario}</p>
+                    <p class="comentario">${coment.comentario}</p>
+                </div>
+                `
+        })
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+boton.onclick = () =>{
+    obtenerComentarios();
+}
