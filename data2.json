@@ -1,0 +1,98 @@
+[
+    {   
+        "tipo": "TEMPERATURA",
+        "opciones": [
+            {
+                "id": "C",
+                "nombre": "CELCIUS"
+            },
+            {
+                "id": "F",
+                "nombre": "FAHRENHEIT"
+            },
+            {
+                "id": "K",
+                "nombre": "KELVIN"
+            }
+        ]
+    }, 
+    {
+        "tipo": "VOLUMEN",
+        "opciones": [
+            {
+                "id": "L",
+                "nombre": "LITRO"
+            },
+            {
+                "id": "ML",
+                "nombre": "MILILITRO"
+            },
+            {
+               "id": "CC",
+               "nombre": "CENTIMETRO CUBICO"
+            },
+            {
+               "id": "MC",
+               "nombre": "METRO CUBICO"
+           }
+        ]
+    },
+    {
+       "tipo": "MASA",
+       "opciones": [
+           {
+               "id": "KG",
+               "nombre": "KILOGRAMO"
+           },
+           {
+               "id": "G",
+               "nombre": "GRAMO"
+           },
+           {
+               "id": "OZ",
+               "nombre": "ONZA"
+           },
+           {
+               "id": "LB",
+               "nombre": "LIBRA"
+           },
+           {
+               "id": "T",
+               "nombre": "TONELADA"
+           }
+       ]
+   },
+   {
+       "tipo": "LONGITUD",
+       "opciones": [
+           {
+               "id": "MM",
+               "nombre": "MILIMETRO"
+           },
+           {
+               "id": "CM",
+               "nombre": "CENTIMETRO"
+           },
+           {
+               "id": "M",
+               "nombre": "METRO"
+           },
+           {
+               "id": "KM",
+               "nombre": "KILOMETRO"
+           },
+           {
+               "id": "IN",
+               "nombre": "PULGADA"
+           },
+           {
+               "id": "FT",
+               "nombre": "PIE"
+           },
+           {
+               "id": "MI",
+               "nombre": "MILLA"
+           }
+       ]
+   }
+] 

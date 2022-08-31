@@ -446,7 +446,7 @@ convertirVol();
 
 const conversiones = async () => {
     try{
-        let response = await fetch("./data.json");
+        let response = await fetch("./data2.json");
         let tiposConversiones = await response.json();
 
         tiposConversiones.forEach(obj => {
