@@ -21,17 +21,37 @@ const ejecutarRespuesta = () => {
         color:`black`,
         background:`rgba(107, 201, 166)`,  
     })
-    /* respuestaForm.innerHTML = `BIENVENIDO ${username}`;
-    formUser.style.display = 'none';
-    irAConversor.style.opacity = 100;
-    irAConversor.addEventListener('click', () => {
-        window.location.href = ('./index.html');
-    }); */
 }
 
 const ejecutarForm = () => {
     username = usernameForm.value;
     password = passwordForm.value;
+
+    if (username == "" && password ==""){
+        Swal.fire({
+            title: `Usted no está logueado, por favor volver a intentar`,
+            color:`black`,
+            confirmButtonColor: `black`,
+            background:`rgba(107, 201, 166)`,  
+        })
+    } else if (username == ""){
+        Swal.fire({
+            title: `Usuario no ingresado, por favor volver a intentar`,
+            color:`black`,
+            confirmButtonColor: `black`,
+            background:`rgba(107, 201, 166)`,  
+        })
+    } else if (password == ""){
+        Swal.fire({
+            title: `Contraseña no ingresada, por favor volver a intentar`,
+            confirmButtonColor: `black`,
+            color:`black`,
+            background:`rgba(107, 201, 166)`,  
+        })
+    }
+    else /* (username && password) */ {
+    /* username = usernameForm.value;
+    password = passwordForm.value; */
 
 
     localStorage.setItem('username', username);
@@ -48,16 +68,24 @@ const ejecutarForm = () => {
     console.log(storage);
 
     ejecutarRespuesta();
-
+    } 
+    
 }
 
 const verificarStorage = () => {
-    if (usernameStorage !== null && passwordStorage !== null){
+    /* if (usernameStorage !== null && passwordStorage !== null){
         username = usernameStorage;
         password = passwordStorage;
 
         ejecutarRespuesta();
-    } else {
+    }  */
+    if (usernameStorage && passwordStorage){
+        username = usernameStorage;
+        password = passwordStorage;
+
+        ejecutarRespuesta();
+    }
+    else {
         formUser.addEventListener('submit', (e) =>{
             e.preventDefault();
             ejecutarForm();

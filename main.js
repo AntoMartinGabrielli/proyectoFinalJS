@@ -6,24 +6,155 @@ class conversor{
 
 let listaMedidas = [{medida:"temperatura", unidades:"C, K y F"}, {medida:"volumen", unidades:"L, ML, CC y MC"}, {medida:"longitud", unidades:"MM, CM, M, KM, IN, FT y MI"}, {medida:"masa", unidades:"KG, G, OZ, LB y T"}]
 
+/* LONGITUD */
 
-/* let busquedaMedidaUsuario = prompt("¿Qué medida desea convertir?").toLowerCase();
-let buscarMedida = listaMedidas.find(med => med.medida == busquedaMedidaUsuario);
+const inputLong = document.getElementById('inputLong');
+const outputLong = document.getElementById('outputLong');
+const deLong = document.getElementById('deLong');
+const aLong = document.getElementById('aLong');
+let deLongValue,aLongValue;
 
-if (listaMedidas.some(med => med.medida == busquedaMedidaUsuario)){
-    alert(`La medida buscada es ${buscarMedida.medida} y sus unidades a disposicion para convertir son ${buscarMedida.unidades}.`)
-}else{
-    alert(`No poseemos esa medida para su conversion.`);
-    let agregarMedida = () => {
-        let medida = prompt("¿Que medida le gustaría que agregaramos en nuestra página?");
-    
-        let medidaNueva = new conversor (medida);
-        listaMedidas.push(medidaNueva);
-        console.log(listaMedidas)
-        alert(`Usted agrego ${medidaNueva.medida} a la lista de conversores de la pagina. Muchas gracias.`)
-    }
-    agregarMedida()
-} */
+inputLong.addEventListener("keyup", convertirLong);
+deLong.addEventListener("change", convertirLong);
+aLong.addEventListener("change", convertirLong);
+
+
+function convertirLong(){
+    deLongValue = deLong.value;
+    aLongValue = aLong.value;
+
+    /* metro a milimetro */
+    if (deLongValue == "M" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*1000;
+    }/* metro a centimetro */
+    else if (deLongValue == "M" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*100;
+    } /* metro a kilometro */
+    else if (deLongValue == "M" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*0.001;
+    }/* metro a pulgada */
+    else if (deLongValue == "M" && aLongValue == "IN"){
+        outputLong.value = inputLong.value*39.370;
+    } /* metro a pie */
+    else if (deLongValue == "M" && aLongValue == "FT"){
+        outputLong.value = inputLong.value*3.2808;
+    }/* metro a milla */
+    else if (deLongValue == "M" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.00062137;
+    } /* milimetro a centimetro */
+    else if (deLongValue == "MM" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*0.1;
+    }/* milimetro a metro */
+    else if (deLongValue == "MM" && aLongValue == "M"){
+        outputLong.value = inputLong.value*0.001 ;
+    } /* milimetro a kilometro */
+    else if (deLongValue == "MM" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*0.000001;
+    }/* milimetro a pulgada */
+    else if (deLongValue == "MM" && aLongValue == "IN"){
+        outputLong.value = inputLong.value*0.03937;
+    } /* milimetro a pie */
+    else if (deLongValue == "MM" && aLongValue == "FT"){
+        outputLong.value = inputLong.value*0.00328;
+    }/* milimetro a milla */
+    else if (deLongValue == "MM" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.0000006214;
+    }  /* centimetro a milimetro */
+    else if (deLongValue == "CM" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*10;
+    }/* centimetro a metro */
+    else if (deLongValue == "CM" && aLongValue == "M"){
+        outputLong.value = inputLong.value*0.01;
+    } /* centimetro a kilometro */
+    else if (deLongValue == "CM" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*0.00001;
+    }/* centimetro a pulgada */
+    else if (deLongValue == "CM" && aLongValue == "IN"){
+        outputLong.value = inputLong.value*0.3937;
+    } /* centimetro a pie */
+    else if (deLongValue == "CM" && aLongValue == "FT"){
+        outputLong.value = inputLong.value*0.032808;
+    }/* centimetro a milla */
+    else if (deLongValue == "CM" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.0000062137;
+    } /* kilometro a milimetro */
+    else if (deLongValue == "KM" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*1000000;
+    }/* kilometro a centimetro */
+    else if (deLongValue == "KM" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*100000;
+    } /* kilometro a metro*/
+    else if (deLongValue == "KM" && aLongValue == "M"){
+        outputLong.value = inputLong.value*1000;
+    }/* kilometro a pulgada */
+    else if (deLongValue == "KM" && aLongValue == "IN"){
+        outputLong.value = inputLong.value*39370.07;
+    } /* kilometro a pie */
+    else if (deLongValue == "KM" && aLongValue == "FT"){
+        outputLong.value = inputLong.value*3280.8;
+    }/* kilometro a milla */
+    else if (deLongValue == "KM" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.62137;
+    }  /* pulgada a milimetro */
+    else if (deLongValue == "IN" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*25.4;
+    }/* pulgada a centimetro */
+    else if (deLongValue == "IN" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*2.54;
+    } /* pulgada a metro*/
+    else if (deLongValue == "IN" && aLongValue == "M"){
+        outputLong.value = inputLong.value*0.0254;
+    }/* pulgada a kilometro */
+    else if (deLongValue == "IN" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*0.0000254;
+    } /* pulgada a pie */
+    else if (deLongValue == "IN" && aLongValue == "FT"){
+        outputLong.value = inputLong.value*0.083333;
+    }/* pulgada a milla */
+    else if (deLongValue == "IN" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.00001578;
+    }/* pie a milimetro */
+    else if (deLongValue == "FT" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*304.8;
+     }/* pie a centimetro */
+    else if (deLongValue == "FT" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*30.48;
+     } /* pie a metro */
+    else if (deLongValue == "FT" && aLongValue == "M"){
+        outputLong.value = inputLong.value*0.3048;
+     }/* pie a kilometro */
+    else if (deLongValue == "FT" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*0.0003048;
+     } /* pie a pulgada */
+    else if (deLongValue == "FT" && aLongValue == "IN"){
+        outputLong.value = inputLong.value*12;
+     }/* pie a milla */
+    else if (deLongValue == "FT" && aLongValue == "MI"){
+        outputLong.value = inputLong.value*0.00018939;
+     }  /* milla a milimetro */
+    else if (deLongValue == "MI" && aLongValue == "MM"){
+        outputLong.value = inputLong.value*1609344;
+     }/* milla a centimetro */
+    else if (deLongValue == "MI" && aLongValue == "CM"){
+        outputLong.value = inputLong.value*160934.4;
+     } /* milla a metro*/
+    else if (deLongValue == "MI" && aLongValue == "M"){
+        outputLong.value = inputLong.value*1609.344;
+     }/* milla a kilometro */
+    else if (deLongValue == "MI" && aLongValue == "KM"){
+        outputLong.value = inputLong.value*1.609344;
+     } /* milla a pulgada */
+    else if (deLongValue == "MI" && aLongValue == "IN"){
+         outputLong.value = inputLong.value*63360;
+     }/* milla a pie*/
+    else if (deLongValue == "MI" && aLongValue == "FT"){
+         outputLong.value = inputLong.value*5280;
+     }/* milimetro a milimetro, centimetro a centimetro, metro a metro, kilometro a kilometro, pulgada a pulgada, pie a pie y milla a milla */
+    else {
+        outputLong.value = inputLong.value;
+    } 
+}
+convertirLong();
 
 
 /* TEMPERATURA */
@@ -69,6 +200,90 @@ function convertirTemp(){
 }
 convertirTemp();
 
+
+/* MASA */
+
+const inputMasa = document.getElementById('inputMasa');
+const outputMasa = document.getElementById('outputMasa');
+const deMasa = document.getElementById('deMasa');
+const aMasa = document.getElementById('aMasa');
+let deMasaValue,aMasaValue;
+
+inputMasa.addEventListener("keyup", convertirMasa);
+deMasa.addEventListener("change", convertirMasa);
+aMasa.addEventListener("change", convertirMasa);
+
+function convertirMasa (){
+    deMasaValue = deMasa.value;
+    aMasaValue = aMasa.value;
+
+    /* kilogramo a gramo */
+    if (deMasaValue == "KG" && aMasaValue == "G"){
+        outputMasa.value = inputMasa.value*1000;
+    } /* kilogramo a onza */
+    else if (deMasaValue == "KG" && aMasaValue == "OZ"){
+        outputMasa.value = inputMasa.value*35.27396;
+    } /* kilogramo a libra */
+    else if (deMasaValue == "KG" && aMasaValue == "LB"){
+        outputMasa.value = inputMasa.value*2.20452;
+    } /* kilogramo a tonelada */
+    else if (deMasaValue == "KG" && aMasaValue == "T"){
+        outputMasa.value = inputMasa.value*0.001;
+    } /* gramo a kilogramo */
+    else if (deMasaValue == "G" && aMasaValue == "KG"){
+        outputMasa.value = inputMasa.value*0.001;
+    } /* gramo a onza */
+    else if (deMasaValue == "G" && aMasaValue == "OZ"){
+        outputMasa.value = inputMasa.value*0.352739;
+    } /* gramo a libra */
+    else if (deMasaValue == "G" && aMasaValue == "LB"){
+        outputMasa.value = inputMasa.value*0.0022046;
+    }/* gramo a tonelada */
+    else if (deMasaValue == "G" && aMasaValue == "T"){
+        outputMasa.value = inputMasa.value*0.000001;
+    } /* onza a kilogramo */
+    else if (deMasaValue == "OZ" && aMasaValue == "KG"){
+        outputMasa.value = inputMasa.value*0.028349;
+    } /* onza a gramo */
+    else if (deMasaValue == "OZ" && aMasaValue == "G"){
+        outputMasa.value = inputMasa.value*28.3495;
+    } /* onza a libra */
+    else if (deMasaValue == "OZ" && aMasaValue == "LB"){
+        outputMasa.value = inputMasa.value*0.0625;
+    } /* onza a tonelada */
+    else if (deMasaValue == "OZ" && aMasaValue == "T"){
+        outputMasa.value = inputMasa.value*0.0000283495;
+    } /* libra a kilogramo*/
+    else if (deMasaValue == "LB" && aMasaValue == "KG"){
+        outputMasa.value = inputMasa.value*0.45359;
+    } /* libra a gramo */
+    else if (deMasaValue == "LB" && aMasaValue == "G"){
+        outputMasa.value = inputMasa.value*453.59;
+    } /* libra a onza */
+    else if (deMasaValue == "LB" && aMasaValue == "OZ"){
+        outputMasa.value = inputMasa.value*16;
+    } /* libra a tonelada */
+    else if (deMasaValue == "LB" && aMasaValue == "T"){
+        outputMasa.value = inputMasa.value*0.00045359;
+    } /* tonelada a kilogramo */
+    else if (deMasaValue == "T" && aMasaValue == "KG"){
+        outputMasa.value = inputMasa.value*1000;
+    } /* tonelada a gramo */
+    else if (deMasaValue == "T" && aMasaValue == "G"){
+        outputMasa.value = inputMasa.value*1000000;
+    } /* tonelada a onza */
+    else if (deMasaValue == "T" && aMasaValue == "OZ"){
+        outputMasa.value = inputMasa.value*35273.9619;
+    } /* tonelada a libra */
+    else if (deMasaValue == "T" && aMasaValue == "LB"){
+        outputMasa.value = inputMasa.value*2204.6226;
+    } /* kilogramo a kilogramo, gramo a gramo, onza a onza, libra a libra y tonelada a tonelada */
+    else {
+        outputMasa.value = inputMasa.value;
+    } 
+
+}
+convertirMasa();
 
 /* VOLUMEN */
 
@@ -130,7 +345,7 @@ function convertirVol (){
 }
 convertirVol();
 
-let tiposConversiones = [
+/* let tiposConversiones = [
     {   
         tipo: "TEMPERATURA",
         opciones: [
@@ -227,49 +442,58 @@ let tiposConversiones = [
            },
        ]
    },
-] 
+]  */
 
-tiposConversiones.forEach(obj => {
-    let {tipo, opciones} = obj;
+const conversiones = async () => {
+    try{
+        let response = await fetch("./data.json");
+        let tiposConversiones = await response.json();
 
-    if(tipo === "TEMPERATURA"){
-        let deTemp = document.getElementById('deTemp')
+        tiposConversiones.forEach(obj => {
+            let {tipo, opciones} = obj;
 
-        opciones.forEach(elemento => {
-        let optionTemp = document.createElement('option')
-        optionTemp.value = elemento.id
-        optionTemp.innerText = elemento.nombre
-        deTemp.append(optionTemp)
-        });
-   } else if(tipo === 'VOLUMEN'){
-        let deVol = document.getElementById('deVol')
+            if(tipo === "TEMPERATURA"){
+                let deTemp = document.getElementById('deTemp')
 
-        opciones.forEach(elemento => {
-        let optionVol = document.createElement('option')
-        optionVol.value = elemento.id
-        optionVol.innerText = elemento.nombre
-        deVol.append(optionVol)
-       });
-   } else if(tipo === 'MASA'){
-       let deMasa = document.getElementById('deMasa')
+                opciones.forEach(elemento => {
+                let optionTemp = document.createElement('option')
+                optionTemp.value = elemento.id
+                optionTemp.innerText = elemento.nombre
+                deTemp.append(optionTemp)
+                });
+        } else if(tipo === 'VOLUMEN'){
+                let deVol = document.getElementById('deVol')
 
-       opciones.forEach(elemento => {
-       let optionMasa = document.createElement('option')
-       optionMasa.value = elemento.id
-       optionMasa.innerText = elemento.nombre
-       deMasa.append(optionMasa)
-      });
-   } else if(tipo === 'LONGITUD'){
-       let deLong = document.getElementById('deLong')
+                opciones.forEach(elemento => {
+                let optionVol = document.createElement('option')
+                optionVol.value = elemento.id
+                optionVol.innerText = elemento.nombre
+                deVol.append(optionVol)
+            });
+        } else if(tipo === 'MASA'){
+            let deMasa = document.getElementById('deMasa')
 
-       opciones.forEach(elemento => {
-       let optionLong = document.createElement('option')
-       optionLong.value = elemento.id
-       optionLong.innerText = elemento.nombre
-       deLong.append(optionLong)
-      });
-   }
-});
+            opciones.forEach(elemento => {
+            let optionMasa = document.createElement('option')
+            optionMasa.value = elemento.id
+            optionMasa.innerText = elemento.nombre
+            deMasa.append(optionMasa)
+            });
+        } else if(tipo === 'LONGITUD'){
+            let deLong = document.getElementById('deLong')
+
+            opciones.forEach(elemento => {
+            let optionLong = document.createElement('option')
+            optionLong.value = elemento.id
+            optionLong.innerText = elemento.nombre
+            deLong.append(optionLong)
+            });
+        }
+        })
+    } catch (error){
+        console.log(error)
+    }
+};
 
 /* fetch */
 const boton = document.querySelector("#btn");
