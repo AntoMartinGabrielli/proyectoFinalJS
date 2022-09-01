@@ -41,15 +41,7 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO" id="inputLong">
-            <select class="de" id="deLong">
-                <!-- <option value="MM">MILIMETRO</option>
-                <option value="CM">CENTIMETRO</option>
-                <option value="M">METRO</option>
-                <option value="KM">KILOMETRO</option>
-                <option value="IN">PULGADA</option>
-                <option value="FT">PIE</option>
-                <option value="MI">MILLA</option> -->
-            </select>
+            <select class="de" id="deLong"></select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputLong">
             <select class="a" id="aLong">
@@ -68,11 +60,7 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="number" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO" id="inputTemp">
-            <select class="de" id="deTemp">
-              <!--   <option value="C">CELCIUS</option>
-                <option value="F">FAHRENHEIT</option>
-                <option value="K">KELVIN</option> -->
-            </select>
+            <select class="de" id="deTemp"></select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="number" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputTemp">
             <select class="a" id="aTemp">
@@ -87,13 +75,7 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO" id="inputMasa">
-            <select class="de" id="deMasa">
-                <!-- <option value="KG">KILOGRAMO</option>
-                <option value="G">GRAMO</option>
-                <option value="OZ">ONZA</option>
-                <option value="LB">LIBRA</option>
-                <option value="T">TONELADA</option> -->
-            </select>
+            <select class="de" id="deMasa"></select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputMasa">
             <select class="a" id="aMasa">
@@ -110,12 +92,7 @@
         <form>
             <label class="unidadAConvertir" for="unidadAConvertir">DE</label>
             <input type="search" name="unidadAConvertir" class="uAConvertir" placeholder="NUMERO" id="inputVol">
-            <select class="de" id="deVol">
-                <!-- <option value="L">LITRO</option>
-                <option value="ML">MILILITRO</option>
-                <option value="CC">CENTIMETRO CUBICO</option>
-                <option value="MC">METRO CUBICO</option> -->
-            </select>
+            <select class="de" id="deVol"></select>
             <label class="unidadDeseada" for="unidadDeseada">A</label>
             <input type="search" name="unidadDeseada" class="uDeseada" placeholder="RESULTADO" id="outputVol">
             <select class="a" id="aVol">
@@ -126,12 +103,16 @@
             </select>
         </form>
     </div>
-    <button class="btnComent" id="btn">VER COMENTARIOS</button>
-    <div id="fetch"></div>
+    <h3 class="seccionComent">SECCION DE COMENTARIOS</h3>
+    <form class="comentarios" id="formComent">
+        <input id="user" type="text" class="users" placeholder="USUARIO">
+        <input id="coment" class="coment" type="text" placeholder="DEJA TU COMENTARIO AQUI">
+        <button id="enviarComent" class="enviarComent" type="submit">COMENTAR</button>
+    </form>
+    <div id="listadoComent"></div>
+    
 </main>
-<footer>
-   
-</footer>
+
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./main.js"></script>

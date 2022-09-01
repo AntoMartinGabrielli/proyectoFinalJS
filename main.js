@@ -1,11 +1,3 @@
-class conversor{
-    constructor(medida){
-        this.medida = medida;
-    }
-}
-
-let listaMedidas = [{medida:"temperatura", unidades:"C, K y F"}, {medida:"volumen", unidades:"L, ML, CC y MC"}, {medida:"longitud", unidades:"MM, CM, M, KM, IN, FT y MI"}, {medida:"masa", unidades:"KG, G, OZ, LB y T"}]
-
 /* LONGITUD */
 
 const inputLong = document.getElementById('inputLong');
@@ -345,108 +337,10 @@ function convertirVol (){
 }
 convertirVol();
 
-/* let tiposConversiones = [
-    {   
-        tipo: "TEMPERATURA",
-        opciones: [
-            {
-                id: 'C',
-                nombre: 'CELCIUS',
-            },
-            {
-                id: 'F',
-                nombre: 'FAHRENHEIT',
-            },
-            {
-                id: 'K',
-                nombre: 'KELVIN',
-            },
-        ]
-    }, 
-    {
-        tipo: "VOLUMEN",
-        opciones: [
-            {
-                id: 'L',
-                nombre: 'LITRO',
-            },
-            {
-                id: 'ML',
-                nombre: 'MILILITRO',
-            },
-            {
-               id: 'CC',
-               nombre: 'CENTIMETRO CUBICO',
-            },
-            {
-               id: 'MC',
-               nombre: 'METRO CUBICO',
-           },
-        ]
-    },
-    {
-       tipo: "MASA",
-       opciones: [
-           {
-               id: 'KG',
-               nombre: 'KILOGRAMO',
-           },
-           {
-               id: 'G',
-               nombre: 'GRAMO',
-           },
-           {
-               id: 'OZ',
-               nombre: 'ONZA',
-           },
-           {
-               id: 'LB',
-               nombre: 'LIBRA',
-           },
-           {
-               id: 'T',
-               nombre: 'TONELADA',
-           },
-       ]
-   },
-   {
-       tipo: "LONGITUD",
-       opciones: [
-           {
-               id: 'MM',
-               nombre: 'MILIMETRO',
-           },
-           {
-               id: 'CM',
-               nombre: 'CENTIMETRO',
-           },
-           {
-               id: 'M',
-               nombre: 'METRO',
-           },
-           {
-               id: 'KM',
-               nombre: 'KILOMETRO',
-           },
-           {
-               id: 'IN',
-               nombre: 'PULGADA',
-           },
-           {
-               id: 'FT',
-               nombre: 'PIE',
-           },
-           {
-               id: 'MI',
-               nombre: 'MILLA',
-           },
-       ]
-   },
-]  */
-
+/* fetch */
 const conversiones = async () => {
     try{
-        let response = await fetch("./data2.json");
+        let response = await fetch("./data.json");
         let tiposConversiones = await response.json();
 
         tiposConversiones.forEach(obj => {
@@ -461,7 +355,7 @@ const conversiones = async () => {
                 optionTemp.innerText = elemento.nombre
                 deTemp.append(optionTemp)
                 });
-        } else if(tipo === 'VOLUMEN'){
+        } else if(tipo === "VOLUMEN"){
                 let deVol = document.getElementById('deVol')
 
                 opciones.forEach(elemento => {
@@ -470,7 +364,7 @@ const conversiones = async () => {
                 optionVol.innerText = elemento.nombre
                 deVol.append(optionVol)
             });
-        } else if(tipo === 'MASA'){
+        } else if(tipo === "MASA"){
             let deMasa = document.getElementById('deMasa')
 
             opciones.forEach(elemento => {
@@ -479,7 +373,7 @@ const conversiones = async () => {
             optionMasa.innerText = elemento.nombre
             deMasa.append(optionMasa)
             });
-        } else if(tipo === 'LONGITUD'){
+        } else if(tipo === "LONGITUD"){
             let deLong = document.getElementById('deLong')
 
             opciones.forEach(elemento => {
@@ -495,29 +389,61 @@ const conversiones = async () => {
     }
 };
 
-/* fetch */
-const boton = document.querySelector("#btn");
-const contenedor = document.querySelector("#fetch");
+conversiones();
 
-const obtenerComentarios = async ()=>{
-    try {
-        let response = await fetch("./data.json");
-        let result = await response.json();
-        result.forEach(coment => {
-            contenedor.innerHTML +=`
-                <div class="coments">
-                    <h3 class="tituloComent">COMENTARIO ${coment.id}</h3>
-                    <p class="usuarioComent">${coment.usuario}</p>
-                    <p class="comentario">${coment.comentario}</p>
-                </div>
-                `
-        })
-    } catch (error) {
-        console.log(error)
+
+/* COMENTARIOS */
+
+// variables
+
+const formComent = document.getElementById('formComent');
+const coment = document.getElementById('coment');
+const listadoComentDOM = document.getElementById('listadoComent');
+const user = document.getElementById('user');
+
+const listadoComent = [];
+const listadoStorage = JSON.parse(localStorage.getItem('listaComentarios'));
+
+// funciones
+ const verificarStorage = () => {
+    if (listadoStorage !== null){
+        listadoComent = listadoStorage;
+        for (const coment of listadoComent) {
+            agregarComent(user, coment);
+        }
+    }
+ }
+
+ const agregarComentJS = ( user, coment) => {
+    listadoComent.push(user, coment);
+    localStorage.setItem('listaComentarios', JSON.stringify(listadoComent));
+ }
+
+const agregarComent = (user, coment) =>{
+    const elemento = document.createElement('p');
+    elemento.innerHTML = `
+    <div class="borderComent">
+        <div class="comentario">
+            <p> <b>COMENTARIO  de ${user.usuario} </b></p>
+            <span>${coment.comentario}</span>
+        </div>
+    </div>`;
+    listadoComentDOM.append(elemento);
+    
+}
+
+// listener
+
+formComent.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    const _user = {
+        usuario: user.value
+    }
+    const _coment = {
+        comentario: coment.value
     }
 
-}
-
-boton.onclick = () =>{
-    obtenerComentarios();
-}
+    agregarComentJS(_user, _coment);
+    agregarComent(_user, _coment);
+})

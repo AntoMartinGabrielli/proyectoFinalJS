@@ -1,8 +1,6 @@
 const formUser = document.querySelector("#formUser");
 const usernameForm = document.querySelector("#username");
 const passwordForm = document.querySelector("#password");
-/* const respuestaForm = document.querySelector("#respuesta");
-const irAConversor = document.querySelector("#irAConversor"); */
 
 
 let username;
@@ -49,11 +47,7 @@ const ejecutarForm = () => {
             background:`rgba(107, 201, 166)`,  
         })
     }
-    else /* (username && password) */ {
-    /* username = usernameForm.value;
-    password = passwordForm.value; */
-
-
+    else {
     localStorage.setItem('username', username);
     localStorage.setItem('password', password);
 
@@ -73,12 +67,6 @@ const ejecutarForm = () => {
 }
 
 const verificarStorage = () => {
-    /* if (usernameStorage !== null && passwordStorage !== null){
-        username = usernameStorage;
-        password = passwordStorage;
-
-        ejecutarRespuesta();
-    }  */
     if (usernameStorage && passwordStorage){
         username = usernameStorage;
         password = passwordStorage;
